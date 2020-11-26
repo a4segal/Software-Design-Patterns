@@ -1,5 +1,6 @@
 # Software Design Patterns
 
+An interactive JavaScript application written in React designed to explain software design patterns in action.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
