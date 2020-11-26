@@ -1,11 +1,17 @@
 {
-  "name": "design-patterns",
-  "version": "0.1.0",
-  "private": true,
+  "name": "software-design-patterns",
+  "description": "An interactive JavaScript application written in React designed to explain software design patterns in action.",
+  "version": "0.3.0",
+  "author": {
+    "email": "a4segal@gmail.com",
+    "name": "Alex Segal"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
@@ -30,9 +36,9 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 3 safari version"
     ]
   }
 }
