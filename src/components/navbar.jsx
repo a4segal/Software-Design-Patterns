@@ -1,5 +1,20 @@
+import React from "react";
+
 // Stateless Functional Component
 const NavBar = () => {
+  const getCurrentDate = () => new Date().toLocaleDateString();
+  const [currentDate, setCurrentDate] = React.useState(getCurrentDate());
+
+  React.useEffect(() => {
+    const intervalID = setInterval(
+      () => setCurrentDate(getCurrentDate()),
+      3600000
+    );
+    return () => {
+      clearInterval(intervalID);
+    };
+  });
+
   return (
     <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a
@@ -58,8 +73,8 @@ const NavBar = () => {
         </ul>
       </div>
 
-      <div className="ml-auto">
-        <small className="d-block text-center" title="Current Date"></small>
+      <div className="ml-auto font-weight-light text-info" title="Current Date">
+        {currentDate}
       </div>
     </nav>
   );
