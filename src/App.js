@@ -3,9 +3,10 @@ import NavBar from "./components/navbar";
 import logo from "./logo.svg";
 import "./App.css";
 
-import patternCategoriesList from "./patterns/patternCategoriesList";
-import PatternCategories from "./patterns/patternCategories";
+import categoriesData from "./patterns/categoriesData";
+import CategoriesAccordion from "./patterns/categoriesAccordion";
 
+// @todo: move to a separate library
 React.useStickyState = (defaultValue, key) => {
   const keyPrefix = "RS_"; //React State's prefix
   const [value, setValue] = React.useState(() => {
@@ -33,9 +34,7 @@ React.useStickyState = (defaultValue, key) => {
  */
 
 const App = (props) => {
-  const patternCategoriesIds = patternCategoriesList.map(
-    (category) => category.id
-  );
+  const patternCategoriesIds = categoriesData.map((category) => category.id);
 
   // declare new state variables
 
@@ -48,7 +47,7 @@ const App = (props) => {
 
   const getCategoryPattern = (categoryId, patternId) => {
     try {
-      const category = patternCategoriesList.find(
+      const category = categoriesData.find(
         (category) => category.id === categoryId
       );
       const categoryPattern = category.patterns.find(
@@ -82,8 +81,8 @@ const App = (props) => {
         <img src={logo} className="App-logo" alt="logo" />
 
         <div className="container">
-          <PatternCategories
-            patternCategoriesList={patternCategoriesList}
+          <CategoriesAccordion
+            categoriesData={categoriesData}
             getCategoryPattern={getCategoryPattern}
             getCategoryPatternId={getCategoryPatternId}
             setCategoryPatternId={setCategoryPatternId}

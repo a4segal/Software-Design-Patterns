@@ -1,23 +1,25 @@
 import React from "react";
-import PatternCategory from "./patternCategory";
+import CategoryCard from "./categoryCard";
+import patternModules from "./patternModules";
 
-const PatternCategories = ({
-  patternCategoriesList,
+const CategoriesAccordion = ({
+  categoriesData,
   getCategoryPattern,
   getCategoryPatternId,
   setCategoryPatternId,
 }) => {
   return (
     <React.Fragment>
-      <div id="accordion" className="App-pattern-categories mb-3">
-        {patternCategoriesList.map((category, index) => (
-          <PatternCategory
+      <div id="accordion" className="App-categories-accordion mb-3">
+        {categoriesData.map((category, index) => (
+          <CategoryCard
             key={category.id}
             index={index}
             category={category}
             getCategoryPattern={getCategoryPattern}
             getCategoryPatternId={getCategoryPatternId}
             setCategoryPatternId={setCategoryPatternId}
+            patternModules={patternModules}
           />
         ))}
       </div>
@@ -25,4 +27,4 @@ const PatternCategories = ({
   );
 };
 
-export default PatternCategories;
+export default CategoriesAccordion;
