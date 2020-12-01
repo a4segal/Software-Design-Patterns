@@ -1,7 +1,7 @@
 {
   "name": "software-design-patterns",
   "description": "An interactive JavaScript application written in React designed to explain software design patterns in action.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": {
     "email": "a4segal@gmail.com",
     "name": "Alex Segal"

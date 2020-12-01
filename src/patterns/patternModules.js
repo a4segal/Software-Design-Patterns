@@ -1,8 +1,8 @@
 // Behavioral patterns
-import CommandPatternComponent from "./behavioral/command/commandPatternComponent";
-import IteratorPatternComponent from "./behavioral/iterator/iteratorPatternComponent";
-import MementoPatternComponent from "./behavioral/memento/mementoPatternComponent";
-import ObserverPatternComponent from "./behavioral/observer/observerPatternComponent";
+import CommandPatternModule from "./behavioral/command/commandPatternComponent";
+import IteratorPatternModule from "./behavioral/iterator/iteratorPatternComponent";
+import MementoPatternModule from "./behavioral/memento/mementoPatternComponent";
+import ObserverPatternModule from "./behavioral/observer/observerPatternModule";
 
 // Creational patterns
 //...
@@ -12,10 +12,10 @@ import ObserverPatternComponent from "./behavioral/observer/observerPatternCompo
 
 const patternModules = {
   behavioral: {
-    command: CommandPatternComponent,
-    iterator: IteratorPatternComponent,
-    memento: MementoPatternComponent,
-    observer: ObserverPatternComponent,
+    command: CommandPatternModule,
+    iterator: IteratorPatternModule,
+    memento: MementoPatternModule,
+    observer: ObserverPatternModule,
   },
   creational: {},
   structural: {},
