@@ -102,8 +102,8 @@ const ObserverPatternModule = () => {
 
           <div className="col-2">
             <div className="input-group input-group-sm">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
+              <div className="input-group-prepend">
+                <div className="input-group-text">
                   <input
                     name="formSaleEnabled"
                     type="checkbox"
