@@ -1,6 +1,6 @@
 # Software Design Patterns in Action
 
-This projects contains the 23 Gang of Four (GoF) software design patterns implemented in JavaScript using ES6 classes and interactive examples written in React.
+This projects contains the 23 Gang of Four (GoF) software design patterns implemented in JavaScript using ECMAScript 6 (ES6) classes and interactive examples written in React.
 
 ## List of Design Patterns Separed by Type
 
