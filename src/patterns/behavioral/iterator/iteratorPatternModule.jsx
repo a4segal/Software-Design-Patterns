@@ -12,7 +12,7 @@ const reverseArrayIterator = iteratorManager.reverseArrayIterator([
   "Arthur (I)",
 ]); // returns 4 strings
 
-const IteratorPatternComponent = () => {
+const IteratorPatternModule = () => {
   const [formState, setFormState] = React.useState(
     {
       fibonacciSequenceValue: "",
@@ -59,4 +59,4 @@ const IteratorPatternComponent = () => {
   );
 };
 
-export default IteratorPatternComponent;
+export default IteratorPatternModule;

@@ -2,7 +2,7 @@ import React from "react";
 import { CareTaker } from "./mementoPatternClasses";
 const mementoCareTaker = new CareTaker();
 
-const MementoPatternComponent = () => {
+const MementoPatternModule = () => {
   const [formState, setFormState] = React.useStickyState(
     {
       email: "a4segal@gmail.com",
@@ -109,4 +109,4 @@ const MementoPatternComponent = () => {
   );
 };
 
-export default MementoPatternComponent;
+export default MementoPatternModule;

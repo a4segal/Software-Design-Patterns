@@ -1,26 +1,30 @@
 import React from "react";
 import { ChainBuilder, NumberHolder } from "./chainOfResponsibilityClasses";
-
-const chain = new ChainBuilder();
-
-// Calling chain of responsibility
-chain.process(new NumberHolder(90));
-chain.process(new NumberHolder(-50));
-chain.process(new NumberHolder(0));
+const chainBuilder = new ChainBuilder();
 
 const ChainOfResponsibilityModule = () => {
   const [formState, setFormState] = React.useStickyState(
     {
-      num1: 610,
-      num2: 987,
+      num: NaN,
       result: NaN,
     },
     "chainOfResponsibilityPattern"
   );
 
   const calculateResult = (newFormState) => {
-    newFormState.result = 0;
+    chainBuilder.build({
+      log(message) {
+        newFormState.result = message;
+      },
+    });
+    chainBuilder.process(new NumberHolder(newFormState.num));
     console.log("calculateResult()", newFormState);
+  };
+
+  const generateRandomNumber = () => {
+    const random = Math.random();
+    const sign = Math.round((random - 0.5) * 3);
+    return Math.round(sign * random * 1000);
   };
 
   const saveNewFormState = (newFormState) => {
@@ -29,43 +33,52 @@ const ChainOfResponsibilityModule = () => {
   };
 
   if (isNaN(formState.result)) {
-    saveNewFormState(formState);
+    setTimeout(() => {
+      saveNewFormState(formState);
+    });
   }
 
   return (
     <React.Fragment>
       <form>
         <div className="form-row">
-          <div className="col-3">
-            <input
-              name="formNum1"
-              type="text"
-              className="form-control form-control-sm"
-              value={formState.num1}
-              onChange={(e) => {
-                saveNewFormState({ ...formState, num1: e.target.value });
-              }}
-              placeholder="First Number"
-            />
-          </div>
-
-          <div className="col-3">
-            <input
-              name="formNum2"
-              type="text"
-              className="form-control form-control-sm"
-              value={formState.num2}
-              onChange={(e) => {
-                saveNewFormState({ ...formState, num2: e.target.value });
-              }}
-              placeholder="Second Number"
-            />
-          </div>
-
-          <div className="col-4">
+          <div className="col-6">
             <div className="input-group input-group-sm">
               <div className="input-group-prepend">
-                <div className="input-group-text">=</div>
+                <button
+                  className="btn btn-outline-info"
+                  type="button"
+                  onClick={() => {
+                    saveNewFormState({
+                      ...formState,
+                      num: generateRandomNumber(),
+                    });
+                  }}
+                  title="Click to generate random number"
+                >
+                  Generate Number
+                </button>
+              </div>
+              <input
+                name="formNum"
+                type="number"
+                className="form-control"
+                value={formState.num}
+                onChange={(e) => {
+                  saveNewFormState({
+                    ...formState,
+                    num: parseFloat(e.target.value),
+                  });
+                }}
+                placeholder="Enter number or click the button"
+              />
+            </div>
+          </div>
+
+          <div className="col-6">
+            <div className="input-group input-group-sm">
+              <div className="input-group-prepend">
+                <div className="input-group-text">Result</div>
               </div>
               <input
                 name="formResult"
@@ -73,7 +86,7 @@ const ChainOfResponsibilityModule = () => {
                 className="form-control"
                 value={formState.result}
                 disabled={true}
-                title="Result"
+                title="Result Message"
               />
             </div>
           </div>

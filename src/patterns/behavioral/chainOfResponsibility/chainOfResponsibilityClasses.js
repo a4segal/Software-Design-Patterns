@@ -22,7 +22,7 @@ class Processor {
 
 class NumberHolder {
   constructor(number) {
-    this.number = number;
+    this.number = parseFloat(number);
   }
 
   getNumber() {
@@ -31,9 +31,14 @@ class NumberHolder {
 }
 
 class NegativeProcessor extends Processor {
-  process(request, logger = console) {
+  constructor(processor, logger = console) {
+    super(processor);
+    this.logger = logger;
+  }
+
+  process(request) {
     if (request.getNumber() < 0) {
-      logger.log("NegativeProcessor : " + request.getNumber());
+      this.logger.log("NegativeProcessor : " + request.getNumber());
     } else {
       super.process(request);
     }
@@ -41,9 +46,14 @@ class NegativeProcessor extends Processor {
 }
 
 class ZeroProcessor extends Processor {
-  process(request, logger = console) {
+  constructor(processor, logger = console) {
+    super(processor);
+    this.logger = logger;
+  }
+
+  process(request) {
     if (request.getNumber() === 0) {
-      logger.log("ZeroProcessor : " + request.getNumber());
+      this.logger.log("ZeroProcessor : " + request.getNumber());
     } else {
       super.process(request);
     }
@@ -51,9 +61,14 @@ class ZeroProcessor extends Processor {
 }
 
 class PositiveProcessor extends Processor {
-  process(request, logger = console) {
+  constructor(processor, logger = console) {
+    super(processor);
+    this.logger = logger;
+  }
+
+  process(request) {
     if (request.getNumber() > 0) {
-      logger.log("PositiveProcessor : " + request.getNumber());
+      this.logger.log("PositiveProcessor : " + request.getNumber());
     } else {
       super.process(request);
     }
@@ -61,11 +76,10 @@ class PositiveProcessor extends Processor {
 }
 
 class ChainBuilder extends Chain {
-  constructor(logger) {
+  build(logger) {
     const link1 = new PositiveProcessor(null, logger);
     const link2 = new ZeroProcessor(link1, logger);
-    const chain = new NegativeProcessor(link2, logger);
-    super(chain);
+    this.chain = new NegativeProcessor(link2, logger);
   }
 }
 
