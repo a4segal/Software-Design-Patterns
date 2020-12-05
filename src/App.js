@@ -1,10 +1,11 @@
 import React from "react";
+import Accordion from "./components/accordion";
 import NavBar from "./components/navbar";
 import logo from "./logo.svg";
 import "./App.css";
 
-import categoriesData from "./patterns/categoriesData";
-import CategoriesAccordion from "./patterns/categoriesAccordion";
+import patternCategories from "./patterns/patternCategories";
+import patternModules from "./patterns/patternModules";
 
 // @todo: move to a separate library
 React.useStickyState = (defaultValue, key) => {
@@ -34,7 +35,7 @@ React.useStickyState = (defaultValue, key) => {
  */
 
 const App = (props) => {
-  const patternCategoriesIds = categoriesData.map((category) => category.id);
+  const patternCategoriesIds = patternCategories.map((category) => category.id);
 
   // declare new state variables
 
@@ -47,7 +48,7 @@ const App = (props) => {
 
   const getCategoryPattern = (categoryId, patternId) => {
     try {
-      const category = categoriesData.find(
+      const category = patternCategories.find(
         (category) => category.id === categoryId
       );
       const categoryPattern = category.patterns.find(
@@ -81,11 +82,12 @@ const App = (props) => {
         <img src={logo} className="App-logo" alt="logo" />
 
         <div className="container">
-          <CategoriesAccordion
-            categoriesData={categoriesData}
+          <Accordion
             getCategoryPattern={getCategoryPattern}
             getCategoryPatternId={getCategoryPatternId}
             setCategoryPatternId={setCategoryPatternId}
+            patternCategories={patternCategories}
+            patternModules={patternModules}
           />
         </div>
 

@@ -11,6 +11,14 @@ import ObserverPatternModule from "./behavioral/observer/observerPatternModule";
 // Structural patterns
 //...
 
+/**
+ * Categorised list of design patterns modules.
+ * @url https://en.wikipedia.org/wiki/Software_design_pattern
+ * @const {Object} patternModules - Contains pattern categories with modules imports.
+ * @param {Object} patternModules.behavioral - Import behavioral patterns modules.
+ * @param {Object} patternModules.creational - Import creational patterns modules.
+ * @param {Object} patternModules.structural - Import structural patterns modules.
+ */
 const patternModules = {
   behavioral: {
     chainOfResponsibility: ChainOfResponsibilityModule,

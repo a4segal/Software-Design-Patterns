@@ -1,20 +1,20 @@
 /**
  * Categorised list of software design patterns.
  * @url https://en.wikipedia.org/wiki/Software_design_pattern
- * @const {Object[]} categoriesData - Contains pattern categories list.
- * @param {string} categoriesData[].id - The pattern category's ID.
- * @param {string} categoriesData[].title - The pattern category's title.
- * @param {string} categoriesData[].description - The pattern category's description.
- * @param {string} categoriesData[].link - The pattern category's link.
+ * @const {Object[]} patternCategories - Contains pattern categories list.
+ * @param {string} patternCategories[].id - The pattern category's ID.
+ * @param {string} patternCategories[].title - The pattern category's title.
+ * @param {string} patternCategories[].description - The pattern category's description.
+ * @param {string} patternCategories[].link - The pattern category's link.
  * The list of design patterns within a specific category (ie class of patterns).
- * @param {Object[]} categoriesData[].patterns - List of design patterns in a category.
- * @param {string} categoriesData[].patterns[].id - The design pattern's ID.
- * @param {string} categoriesData[].patterns[].title - The design pattern's title.
- * @param {string} categoriesData[].patterns[].description - The design pattern's description.
- * @param {string} categoriesData[].patterns[].link - The design pattern's link.
- * @param {boolean} categoriesData[].patterns[].hasExample - Whether there is an example implementation or not.
+ * @param {Object[]} patternCategories[].patterns - List of design patterns in a category.
+ * @param {string} patternCategories[].patterns[].id - The design pattern's ID.
+ * @param {string} patternCategories[].patterns[].title - The design pattern's title.
+ * @param {string} patternCategories[].patterns[].description - The design pattern's description.
+ * @param {string} patternCategories[].patterns[].link - The design pattern's link.
+ * @param {boolean} patternCategories[].patterns[].hasExample - Whether there is an example implementation or not.
  */
-const categoriesData = [
+const patternCategories = [
   {
     id: "behavioral",
     title: "Behavioral Patterns",
@@ -219,5 +219,5 @@ const deepFreeze = (obj) => {
   return Object.freeze(obj);
 };
 
-deepFreeze(categoriesData);
-export default categoriesData;
+deepFreeze(patternCategories);
+export default patternCategories;

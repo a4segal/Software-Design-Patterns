@@ -1,17 +1,17 @@
 import React from "react";
 import CategoryCard from "./categoryCard";
-import patternModules from "./patternModules";
 
-const CategoriesAccordion = ({
-  categoriesData,
+const Accordion = ({
   getCategoryPattern,
   getCategoryPatternId,
   setCategoryPatternId,
+  patternCategories,
+  patternModules,
 }) => {
   return (
     <React.Fragment>
       <div id="accordion" className="App-categories-accordion mb-3">
-        {categoriesData.map((category, index) => (
+        {patternCategories.map((category, index) => (
           <CategoryCard
             key={category.id}
             index={index}
@@ -27,4 +27,4 @@ const CategoriesAccordion = ({
   );
 };
 
-export default CategoriesAccordion;
+export default Accordion;
