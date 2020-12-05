@@ -1,4 +1,5 @@
 import React from "react";
+import { useStickyState } from "../utils";
 import CategoryCardBodySelect from "./categoryCardBodySelect";
 
 let cachedSelectedPattern = {};
@@ -61,7 +62,7 @@ const CategoryCardBody = ({
 
             <h6 className="text-info">Pattern Example(s)</h6>
             {SelectedPatternModuleTag ? (
-              <SelectedPatternModuleTag />
+              <SelectedPatternModuleTag useStickyState={useStickyState} />
             ) : (
               <React.Fragment>
                 <code className="d-block text-center">

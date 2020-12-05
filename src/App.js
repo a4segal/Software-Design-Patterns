@@ -1,4 +1,5 @@
 import React from "react";
+import { useStickyState } from "./utils";
 import Accordion from "./components/accordion";
 import NavBar from "./components/navbar";
 import logo from "./logo.svg";
@@ -6,19 +7,6 @@ import "./App.css";
 
 import patternCategories from "./patterns/patternCategories";
 import patternModules from "./patterns/patternModules";
-
-// @todo: move to a separate library
-React.useStickyState = (defaultValue, key) => {
-  const keyPrefix = "RS_"; //React State's prefix
-  const [value, setValue] = React.useState(() => {
-    const stickyValue = window.localStorage.getItem(keyPrefix + key);
-    return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
-  });
-  React.useEffect(() => {
-    window.localStorage.setItem(keyPrefix + key, JSON.stringify(value));
-  }, [key, value]);
-  return [value, setValue];
-};
 
 /**
  * In software engineering, a software design pattern is a general, reusable
@@ -39,7 +27,7 @@ const App = (props) => {
 
   // declare new state variables
 
-  const [selectedPatternIds, setSelectedPatternIds] = React.useStickyState(
+  const [selectedPatternIds, setSelectedPatternIds] = useStickyState(
     {},
     "selectedPatternIds"
   );

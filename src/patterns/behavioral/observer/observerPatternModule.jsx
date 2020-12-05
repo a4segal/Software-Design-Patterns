@@ -1,8 +1,8 @@
 import React from "react";
 import { Product, Fees, Profit, Sale } from "./observerPatternClasses";
 
-const ObserverPatternModule = () => {
-  const [formState, setFormState] = React.useStickyState(
+const ObserverPatternModule = ({ useStickyState }) => {
+  const [formState, setFormState] = useStickyState(
     {
       basePrice: 600,
       feesPercent: 10,

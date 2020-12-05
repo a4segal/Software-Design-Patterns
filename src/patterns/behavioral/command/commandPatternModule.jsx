@@ -15,9 +15,9 @@ commandManager.handle("/ (divide)", (num1, num2) => {
   return parseFloat(num1) / parseFloat(num2);
 });
 
-const CommandPatternModule = () => {
+const CommandPatternModule = ({ useStickyState }) => {
   const commandNames = commandManager.getCommandNames();
-  const [formState, setFormState] = React.useStickyState(
+  const [formState, setFormState] = useStickyState(
     {
       type: commandNames[0],
       num1: 610,

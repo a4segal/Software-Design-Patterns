@@ -2,8 +2,8 @@ import React from "react";
 import { ChainBuilder, NumberHolder } from "./chainOfResponsibilityClasses";
 const chainBuilder = new ChainBuilder();
 
-const ChainOfResponsibilityModule = () => {
-  const [formState, setFormState] = React.useStickyState(
+const ChainOfResponsibilityModule = ({ useStickyState }) => {
+  const [formState, setFormState] = useStickyState(
     {
       num: NaN,
       result: NaN,

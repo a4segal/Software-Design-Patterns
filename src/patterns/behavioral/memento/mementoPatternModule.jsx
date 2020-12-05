@@ -2,8 +2,8 @@ import React from "react";
 import { CareTaker } from "./mementoPatternClasses";
 const mementoCareTaker = new CareTaker();
 
-const MementoPatternModule = () => {
-  const [formState, setFormState] = React.useStickyState(
+const MementoPatternModule = ({ useStickyState }) => {
+  const [formState, setFormState] = useStickyState(
     {
       email: "a4segal@gmail.com",
       subject: "Memento pattern example",
