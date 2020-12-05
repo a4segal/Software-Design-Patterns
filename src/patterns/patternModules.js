@@ -2,6 +2,7 @@
 import ChainOfResponsibilityModule from "./behavioral/chainOfResponsibility/chainOfResponsibilityModule";
 import CommandPatternModule from "./behavioral/command/commandPatternModule";
 import IteratorPatternModule from "./behavioral/iterator/iteratorPatternModule";
+import MediatorPatternModule from "./behavioral/mediator/mediatorPatternModule";
 import MementoPatternModule from "./behavioral/memento/mementoPatternModule";
 import ObserverPatternModule from "./behavioral/observer/observerPatternModule";
 
@@ -24,6 +25,7 @@ const patternModules = {
     chainOfResponsibility: ChainOfResponsibilityModule,
     command: CommandPatternModule,
     iterator: IteratorPatternModule,
+    mediator: MediatorPatternModule,
     memento: MementoPatternModule,
     observer: ObserverPatternModule,
   },

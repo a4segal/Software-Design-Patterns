@@ -1,5 +1,6 @@
 import React from "react";
 import { ChainBuilder, NumberHolder } from "./chainOfResponsibilityClasses";
+
 const chainBuilder = new ChainBuilder();
 
 const ChainOfResponsibilityModule = ({ useStickyState }) => {

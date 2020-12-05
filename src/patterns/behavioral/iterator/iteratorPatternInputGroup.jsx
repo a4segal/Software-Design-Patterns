@@ -31,13 +31,13 @@ const IteratorPatternInputGroup = ({
           </button>
         </div>
         <input
-          type="text"
           className={[
             "form-control",
             formState[iteratorKeyName] !== ERROR_NO_ELEMENTS
               ? "is-valid"
               : "is-invalid",
           ].join(" ")}
+          type="text"
           aria-label="Result"
           placeholder="Click the button"
           defaultValue={formState[iteratorKeyName]}

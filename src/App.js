@@ -79,14 +79,16 @@ const App = (props) => {
           />
         </div>
 
-        <a
-          className="App-link text-info"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          <a
+            className="App-link text-info"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </p>
       </header>
     </div>
   );
