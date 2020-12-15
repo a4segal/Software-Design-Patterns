@@ -134,6 +134,7 @@ const patternCategories = [
         description:
           "Define an interface for creating a single object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.",
         link: "https://en.wikipedia.org/wiki/Factory_method_pattern",
+        hasExample: true,
       },
       {
         id: "prototype",

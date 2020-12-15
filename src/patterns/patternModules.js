@@ -7,7 +7,7 @@ import MementoPatternModule from "./behavioral/memento/mementoPatternModule";
 import ObserverPatternModule from "./behavioral/observer/observerPatternModule";
 
 // Creational patterns
-//...
+import FactoryMethodModule from "./creational/factoryMethod/factoryMethodModule";
 
 // Structural patterns
 //...
@@ -29,7 +29,9 @@ const patternModules = {
     memento: MementoPatternModule,
     observer: ObserverPatternModule,
   },
-  creational: {},
+  creational: {
+    factoryMethod: FactoryMethodModule,
+  },
   structural: {},
 };
 
